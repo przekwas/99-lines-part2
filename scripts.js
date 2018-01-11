@@ -1,3 +1,14 @@
+//making the document listen for when the dom content is loaded
+document.addEventListener("DOMContentLoaded", function () {
+    //creates a button and puts it on the page
+    let button = document.createElement("button");
+    let btnText = document.createTextNode("Sing!");
+    button.appendChild(btnText);
+    document.body.appendChild(button);
+
+
+})
+
 //array of 5 friends .. two of which are my cats
 let friends = ["Audrey", "Yzerman", "Apollo", "Chris", "Josh"];
 
@@ -21,6 +32,3 @@ function songInner(currentFriend) {
         }
     }
 }
-
-//call that shit
-songOuter(friends);

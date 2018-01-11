@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
     button.appendChild(btnText);
     document.body.appendChild(button);
 
+    //creates an event for clicking the button
+    button.addEventListener("click", function () {
+        songOuter(friends);
+    })
 
 })
 

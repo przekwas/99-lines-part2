@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
-//array of 5 friends .. two of which are my cats
+//global array of 5 friends .. two of which are my cats
 let friends = ["Audrey", "Yzerman", "Apollo", "Chris", "Josh"];
 
 //outer for loop to generate a song for each friend
@@ -28,11 +28,16 @@ function songOuter(whichFriend) {
 function songInner(currentFriend) {
     for (let i = 100; i > 0; i--) {
         let linesLeft = i;
+        let paragraph = document.createElement("p");
         if (i === 1) {
-            console.log(linesLeft + " line of code in the file, " + linesLeft + " line of code; " + currentFriend + " strikes one out, clears it all out, no more lines of code in the file\n" + "**----------------------------**\n");
+            let paragraphText = document.createTextNode(linesLeft + " line of code in the file, " + linesLeft + " line of code; " + currentFriend + " strikes one out, clears it all out, no more lines of code in the file");
+            paragraph.appendChild(paragraphText);
+            document.body.appendChild(paragraph);
         } else {
             let oneLessLine = linesLeft - 1;
-            console.log(linesLeft + " lines of code in the file, " + linesLeft + " lines of code; " + currentFriend + " strikes one out, clears it all out, " + oneLessLine + " lines of code in the file");
+            let paragraphText = document.createTextNode(linesLeft + " lines of code in the file, " + linesLeft + " lines of code; " + currentFriend + " strikes one out, clears it all out, " + oneLessLine + " lines of code in the file");
+            paragraph.appendChild(paragraphText);
+            document.body.appendChild(paragraph);
         }
     }
 }

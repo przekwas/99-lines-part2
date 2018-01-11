@@ -29,10 +29,18 @@ function songInner(currentFriend) {
     for (let i = 100; i > 0; i--) {
         let linesLeft = i;
         let paragraph = document.createElement("p");
+        //catch for final line of the song to correct the grammar
         if (i === 1) {
             let paragraphText = document.createTextNode(linesLeft + " line of code in the file, " + linesLeft + " line of code; " + currentFriend + " strikes one out, clears it all out, no more lines of code in the file");
             paragraph.appendChild(paragraphText);
             document.body.appendChild(paragraph);
+        //catch for penultimate line of the song to correct the grammar
+        } else if (i === 2) {
+            let oneLessLine = linesLeft - 1;
+            let paragraphText = document.createTextNode(linesLeft + " lines of code in the file, " + linesLeft + " lines of code; " + currentFriend + " strikes one out, clears it all out, " + oneLessLine + " line of code in the file");
+            paragraph.appendChild(paragraphText);
+            document.body.appendChild(paragraph);
+       //standard line for the song 
         } else {
             let oneLessLine = linesLeft - 1;
             let paragraphText = document.createTextNode(linesLeft + " lines of code in the file, " + linesLeft + " lines of code; " + currentFriend + " strikes one out, clears it all out, " + oneLessLine + " lines of code in the file");
